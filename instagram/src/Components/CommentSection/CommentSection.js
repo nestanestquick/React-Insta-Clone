@@ -1,18 +1,13 @@
 import React from "react";
 import '../PostContainer/PostContainer.css'
+import CommentInput from './CommentInput';
 
-
-const CommentSection = props =>  {
-    return(
-        <div className='comment-container'>
-            {props.commentsarray.map(({username, text}, index) => (
-        <div className="user-comment">
-            <a href="index.html">{username}</a>
-            <p>{text}</p>
-        </div>
-            ))}
+const Comment = props => {
+    return (
+        <div>
+            <p className="comment-text"><strong>{props.user}</strong> {props.text}</p>
         </div>
     )
 }
 
-export default CommentSection;
+export default Comment

@@ -5,24 +5,29 @@ import PostContainer from './Components/PostContainer/PostContainer';
 import dummyData from './dummy-data';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      mainData: dummyData 
-    }
+      instaData: []
+    } 
   }
-  
 
-render(){
-  return(
-    <div>
-      <SearchBar />
-      <PostContainer postsarray = {this.state.mainData} />
-    </div>
-  )
-}
+  componentDidMount() {
+    this.setState({
+      instaData: dummyData
+    })
+  }
 
+  render() {
+    return (
+      <div className="App">
 
+        <SearchBar />
+        <PostContainer posts = {this.state.instaData} />
+        
+      </div>
+    );
+  }
 }
 
 export default App;
