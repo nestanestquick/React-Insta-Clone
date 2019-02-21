@@ -22,7 +22,7 @@ const Rightsearch = styled.div`
 `
 const Title = styled.h1`
     padding-left: 15px;
-    font-family: 'Grand Hotel', cursive;
+    font-family: 'Comic Sans', 'italic';
     font-size: 35px;
 `
 const Input = styled.input`

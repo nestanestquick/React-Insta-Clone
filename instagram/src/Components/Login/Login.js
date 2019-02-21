@@ -2,32 +2,32 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Header  = styled.div`
-	ext-align: center;
-	width: 20%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 50%;
 	margin: 117px auto;
-	border: 2px solid grey;
+	border: 2px solid darkgrey;
 	border-radius: 28px;
 	height: 150px;
-	background: #e6e6e6;
+	background: lightblue;
 
 `;
 const BoxLogin = styled.div`
 	margin-top: 20px;
-	margin-left: 80px;
 	font-family: Double Struck
-	color: red;
+	color: darkblue;
 	& span h4 > {
 		color: black;
 	} 
 	
 `
 const Button = styled.button`
-  	color: tomato;
+  	color: blue;
   	font-size: 1em;
 	margin: 12px; 
-	margin-left: 50px
   	padding: 0.1em;
-  	border: 2px solid palevioletred;
+  	border: 2px solid darkgray;
 	border-radius: 3px;
 	 
 `;  
@@ -35,7 +35,7 @@ const Button = styled.button`
 const Login = props => {
 	return (
 			<Header >
-				<BoxLogin><span><h4>LOGIN PAGE</h4></span>
+				<BoxLogin><span><h4>Please Login</h4></span>
 				<form>
 					<input type="text" placeholder="UserName"/>
 					<input type="password" placeholder="Password"/>
