@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
-import PostHeader from "./PostHeader.js";
+import PostHeader from "./PostHeader";
 import LikeSection from "./LikeSection";
 import CommentSection from "../CommentSection/CommentSection";
+import styled from 'styled-components';
+
+const PostContainer = styled.div`
+    width: 60%;   
+    margin: 0 auto;
+    text-align: center;
+`
+const CommentContainer = styled.div`
+    border: 1.5px solid #e6e6e6;
+    margin-top: -5px;
+    text-align: left;
+    padding: 10px 20px 5px;
+
+`
+const Img = styled.img`
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+`
 
 class Post extends Component {
     constructor(props) {
@@ -12,7 +31,7 @@ class Post extends Component {
     }
 
     incrementLikes = () => {
-        const likeAdd = this.setState += 1
+        const likeAdd = this.state.likes + 1
         this.setState({
             likes: likeAdd
         })
@@ -20,17 +39,17 @@ class Post extends Component {
 
     render() {
         return(
-            <div className="post-container">
+            <PostContainer>
                 <PostHeader 
                     username = {this.props.post.username}
                     thumbnailUrl = {this.props.post.thumbnailUrl}
                 />
 
-                <div className="post">
-                    <img className="post-image" src={this.props.post.imageUrl} alt="user posted" />
+                <div>
+                    <Img src={this.props.post.imageUrl} alt="user posted" />
                 </div>
 
-                <div className="comment-section-wrapper">
+                <CommentContainer>
 
                     <LikeSection 
                         likes = {this.state.likes}
@@ -42,8 +61,8 @@ class Post extends Component {
                         comments = {this.props.post.comments}
                     />
 
-                </div>
-            </div>
+                </CommentContainer>
+            </PostContainer>
         )
     }
 }

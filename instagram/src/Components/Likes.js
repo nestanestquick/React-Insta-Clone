@@ -9,7 +9,6 @@ const Likes = styled.div`
     padding-bottom: 10px;
 `
 
-
 const LikeSection = props => {
     return(
         <div>
